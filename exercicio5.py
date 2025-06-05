@@ -24,7 +24,7 @@ def roundrobin(processos, quantum):
             p_ativo["t_inicio"] = tempo_atual
             p_ativo["t_resp"] = p_ativo["t_inicio"] - p_ativo["chegada"]
         if p_ativo["tempo_restante"] < quantum:
-            burst = (quantum)-(p_ativo["tempo_restante"])
+            burst = p_ativo["tempo_restante"]
             tempo_atual += burst
             p_ativo["tempo_restante"] = 0
             print(f"{p_ativo["nome"]} foi executado por {burst}t, rest: {p_ativo["tempo_restante"]}, burst: {burst} \n --> Processo finalizado em {tempo_atual}t")
